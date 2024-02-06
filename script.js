@@ -27,21 +27,50 @@ document.addEventListener('DOMContentLoaded', function () {
     const endPlay = () => {
         let date = new Date();
         endTime = date.getTime();
-        let totalTime = ((endTime - startTime) / 1000 );
+        let totalTime = ((endTime - startTime) / 1000);
         console.log(totalTime);
+
+        let totalstr = typeWords.value;
+        let wordCount = wordCounter(totalstr);
+        let speed = Math.floor((wordCount / totalTime) * 60);
+        let finalMsg = "you typed total at " + speed + " words per minute. "
+
+        finalMsg += compareWords(msg.innerText, totalstr)
+
+        msg.innerText = finalMsg;
+    }
+    const wordCounter = (str) => {
+        let response = str.split(" ").length;
+        console.log(response)
+        return response;
+
     }
 
-button.addEventListener('click', function () {
-    console.log(this.innerText);
-    if (this.innerText === 'Start') {
-        typeWords.disabled = false;
-        playGame();
-    }
-    else if (this.innerText == 'Done') {
-        typeWords.disabled = true;
-        button.  = 'Start'
-        endPlay();
+    const compareWords = (str1, str2) => {
+        let words1 = str1.split(" ");
+        let words2 = str2.split(" ");
+        let cnt = 0;
+
+        words1.forEach(function (item, index) {
+            if (item == words2[index]) {
+                cnt++;
+            }
+        })
+        let errorWords = (words1.length - cnt);
+        return ( cnt + " correct out of " + words1.length + " words and the total number of error are" + errorWords + ".");
     }
 
-});
+    button.addEventListener('click', function () {
+        console.log(this.innerText);
+        if (this.innerText === 'Start') {
+            typeWords.disabled = false;
+            playGame();
+        }
+        else if (this.innerText == 'Done') {
+            typeWords.disabled = true;
+            button.innerText = 'Start'
+            endPlay();
+        }
+
+    });
 });

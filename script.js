@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "She tried to retrace her steps, but soon realized she was lost.",
         "She began to panic, but then she remembered her training and started using her nose to sniff out a way home." ];
 
+    
     const msg = document.getElementById('msg');
     const typeWords = document.getElementById('mywords');
     const button = document.getElementById('btn');

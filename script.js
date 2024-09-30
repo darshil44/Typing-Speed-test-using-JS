@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "By inputting the desired number, you can make a list of as many random sentences as you want or need.",
         "Producing random sentences can be helpful in several different ways.", 
         "For writers, a random sentence can help them get their creative juices flowing", 
-        "Lulu was out for her usual morning walk when she took a wrong turn and found herself in the woods.",
+        "Lulu was out for her usual morning walk when she took a wrong turn and found herself in the woods.", 
         "She tried to retrace her steps, but soon realized she was lost.",
         "She began to panic, but then she remembered her training and started using her nose to sniff out a way home." ]; 
 
